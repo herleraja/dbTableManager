@@ -1,0 +1,59 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DBManagement",
+		"_postman_id": "9329bf52-85f1-2562-01b6-2f9f29dceb7a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/healthcheck",
+			"request": {
+				"url": "{{url}}/healthcheck",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create db table",
+			"request": {
+				"url": "{{url}}/api/dbmanager/v1/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de-DE",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TEMP_SENSOR\",\r\n    \"schema\": \"db2\",\r\n\r\n        \"columns\": [{\r\n                \"name\": \"AVG_TEMP#\",\r\n                \"type\": \"DOUBLE\",\r\n                \"nullable\": false\r\n            },\r\n            {\r\n                \"name\": \"MIN_TEMP\",\r\n                \"type\": \"DOUBLE\",\r\n                \"nullable\": false\r\n            },\r\n            {\r\n                \"name\": \"MAX_TEMP\",\r\n                \"type\": \"DOUBLE\",\r\n                \"nullable\": false\r\n            },\r\n            {\r\n                \"name\": \"CURR_TEMP\",\r\n                \"type\": \"DOUBLE\",\r\n                \"nullable\": false\r\n            },\r\n            {\r\n                \"name\": \"devicetype\",\r\n                \"type\": \"VARCHAR\",\r\n                \"nullable\": false,\r\n                \"length\": 64\r\n            },\r\n            {\r\n                \"name\": \"deviceid\",\r\n                \"type\": \"VARCHAR\",\r\n                \"nullable\": false,\r\n                \"length\": 256\r\n            },\r\n            {\r\n                \"name\": \"logicalinterface_id\",\r\n                \"type\": \"VARCHAR\",\r\n                \"nullable\": false,\r\n                \"length\": 64\r\n            },\r\n            {\r\n                \"name\": \"rcv_timestamp_utc\",\r\n                \"type\": \"TIMESTAMP\",\r\n                \"nullable\": false\r\n            },\r\n            {\r\n                \"name\": \"updated_utc\",\r\n                \"type\": \"TIMESTAMP\",\r\n                \"nullable\": false\r\n            }\r\n        ]\r\n    \r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all db table",
+			"request": {
+				"url": "{{url}}/api/dbmanager/v1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
