@@ -8,12 +8,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.springframework.validation.annotation.Validated;
-
 import com.herle.application.constants.Constants;
+import com.herle.application.constants.I18NMessages;
 
 public class Table {
-	@NotNull(message = "{ASDSCMANAGER0003E}")
+	@NotNull(message = "{" + I18NMessages.ASDSCMANAGER0003E + "}")
 	@Pattern(regexp = Constants.REGEX_NAME, message = "{ASDSCMANAGER0004E}")
 	private String name;
 	private String schema;
